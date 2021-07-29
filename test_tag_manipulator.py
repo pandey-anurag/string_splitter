@@ -86,6 +86,20 @@ def test_split_start_space_with_splitter_result_array_of_one():
     # assert
     assert result == expResult
 
+def test_split_start_comma_with_splitter_result_array_of_one():
+    # arrange
+    stringToSplit = ",java"
+    regex = ","
+    expResult = ["java"]
+    result = None
+    cut = TagManipulator()
+
+    # act
+    result = cut.parse_string(stringToSplit)
+
+    # assert
+    assert result == expResult
+
 def test_split_start_comma_space_with_splitter_result_array_of_one():
     # arrange
     stringToSplit = ", java"
@@ -100,7 +114,7 @@ def test_split_start_comma_space_with_splitter_result_array_of_one():
     # assert
     assert result == expResult
 
-def test_split_start_comma_space_with_splitter_result_array_of_one():
+def test_split_multiple_comma_separeted_with_splitter_result_array_of_one():
     # arrange
     stringToSplit = "java byte code, python"
     regex = ","
